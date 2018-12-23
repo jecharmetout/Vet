@@ -229,18 +229,19 @@ transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 .hide {
 display: none!important;
 }
-.pull-right {
-float: right!important;
+.pull-left {
+float: left!important;
 }
 .glyphicon {
-position: relative;
-top: 1px;
-display: inline-block;
-font-family: 'Glyphicons Halflings';
-font-style: normal;
-font-weight: 400;
-line-height: 1;
--webkit-font-smoothing: antialiased;
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    margin-left: -25px;
+    
 }
 .glyphicon-remove:before {
 content: "\e014";
@@ -254,17 +255,25 @@ border-bottom-left-radius: 4px;
 border-top-left-radius: 4px;
 border-top-right-radius: 4px;
 }
-.list-group-item {
-position: relative;
+.list-group-item {position: relative;
 display: block;
-padding: 10px 15px;
+padding: 0px 33px;
 margin-bottom: -1px;
 background-color: #fff;
 border: 1px solid #ddd;
+width: 74%;
+margin-left: 137px;
+height: 70px;
+border-right: none;
+border-left: none;
+font-family: cursive;
+font-size: 18px;
+font-weight: 600;
 }
 .list-group {
     padding-left: 0;
     margin-bottom: 20px;
     border-radius: 4px;
     box-shadow: 0 1px 2px rgba(0,0,0,.075);
+    margin-top: 55px;
 }
