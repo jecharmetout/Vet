@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+   <link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="cssfonts/font-awesome.min.css">
+</head>
+<body>
+<div id="wrapper">
+	<header>
+		<a href="Home.html" target="_blank">Wisdome Pet Medicine</a>
+		<img title="Pet" src="pet.jpg" alt="Pet"  class="pet"> 
+	</header>
+	
+    <div class="openlist show">
+      <button class="btn1">
+      	<i class="fa fa-plus" aria-hidden="true"></i> Add Appointment
+      </button>
+    </div>
+    <div class="unique form ">
+    	      
+      <form>
+        <label>Pet Name</label>	
+        <input type="text" placeholder="Pet Name" name="pet" class="input-text1 inp1">
+        <br>
+        <label>Pet Owner</label>
+        <input type="text" placeholder="Owner's Name" name="owner" class="input-text2 inp2">
+        <br>
+        <label id="data">Date</label>
+        <input type="date"  placeholder="mm/dd/yyyy" name="visit date" class="input-data inp3">
+        <br>
+        <label id="time">Time</label>
+        <input type="time"  placeholder="--:-- --" name="visit date" class="input-time inp4">
+        <br>
+        <label id="aptnotes">Apt. Notes</label>
+        <textarea placeholder="Appointment Notes" class="textaria inp5"></textarea>
+        <button class="btn2">
+            Add Appointment
+        </button>
+      </form>
+   </div>
+  
+  <ul class="list-group list">
+			
+  </ul>
+</div>	
+
+
+
+
+<script type="text/javascript">
+
+var list = document.querySelector(".list")
+var btnFirst = document.querySelector(".btn1");
+var btnSecond = document.querySelector(".btn2");
+var input1 = document.querySelector(".inp1");
+var input2 = document.querySelector(".inp2");
+var input3 = document.querySelector(".inp3");
+var input4 = document.querySelector(".inp4");
+var input5 = document.querySelector(".inp5");
+function consoleInput(){
+	console.log(input1.value);
+};
+btnSecond.onclick = consoleInput;
+/*------------Begin View----------------------------*/
+//var notesArr = [];
+
+
+
+/*function addNewNote(){
+	var text = {
+    pet: input1.value,
+    owner: input2.value,
+    date: input3.value,
+    time: input4.value,
+    appointment: input5.value,
+  }
+	if(text){
+		notesArr.push(text);
+	
+		console.log(notesArr);
+		//createAllNotes();
+	}
+};*/
+
+//btnSecond.onclick = addNewNote;
+
+
+/*------------End View----------------------------*/
+
+
+/*------------Begin Model----------------------------*/
+
+
+
+
+
+
+/*------------End Model----------------------------*/
+
+
+/*------------Begin Controler----------------------------*/
+
+
+
+
+
+
+/*------------End Controler----------------------------*/
+
+
+
+
+</script>
+
+</body>
+
+
+</html>
