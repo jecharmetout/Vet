@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title></title>
-   <link rel="stylesheet" href="css/style.css"/>
-	<link rel="stylesheet" href="cssfonts/font-awesome.min.css">
+   <link rel="stylesheet" href="style.css"/>
+	
 </head>
 <body>
 <div id="wrapper">
@@ -14,7 +14,7 @@
 	
     <div class="openlist show">
       <button class="btn1">
-      	<i class="fa fa-plus" aria-hidden="true"></i> Add Appointment
+      	+ Add Appointment
       </button>
     </div>
     <div class="unique form ">
@@ -34,13 +34,14 @@
         <br>
         <label id="aptnotes">Apt. Notes</label>
         <textarea placeholder="Appointment Notes" class="textaria inp5"></textarea>
-        <button class="btn2">
-            Add Appointment
-        </button>
+        
       </form>
+      <button class="btn2 ">
+          Add Appointment
+      </button>
    </div>
   
-  <ul class="list-group list">
+  <ul class="list">
 			
   </ul>
 </div>	
@@ -58,16 +59,13 @@ var input2 = document.querySelector(".inp2");
 var input3 = document.querySelector(".inp3");
 var input4 = document.querySelector(".inp4");
 var input5 = document.querySelector(".inp5");
-function consoleInput(){
-	console.log(input1.value);
+/*function consoleInput(){
+	console.log("hi");
 };
-btnSecond.onclick = consoleInput;
-/*------------Begin View----------------------------*/
-//var notesArr = [];
-
-
-
-/*function addNewNote(){
+btnSecond.onclick = consoleInput;*/
+/*------------Begin Model----------------------------*/
+var notesArr = [];
+function addNewNote(){
 	var text = {
     pet: input1.value,
     owner: input2.value,
@@ -77,21 +75,15 @@ btnSecond.onclick = consoleInput;
   }
 	if(text){
 		notesArr.push(text);
-	
+    input1.value = "";
+    input2.value = "";
+    input3.value = "";
+    input4.value = "";
+    input5.value = "";
 		console.log(notesArr);
 		//createAllNotes();
 	}
-};*/
-
-//btnSecond.onclick = addNewNote;
-
-
-/*------------End View----------------------------*/
-
-
-/*------------Begin Model----------------------------*/
-
-
+};
 
 
 
@@ -99,9 +91,34 @@ btnSecond.onclick = consoleInput;
 /*------------End Model----------------------------*/
 
 
+/*------------Begin View----------------------------*/
+
+function createEachNote(text, indexOfNote){
+  var newLi = document.createElement("li");
+  newLi.textContent = text;
+  var delSpan = document.createElement("span");
+  delSpan.setAttribute("class","glyphicon glyphicon-remove pull-right");
+  delSpan.onclick = function(){
+		//delSpan.parentNode.remove();
+		notesArr.splice(indexOfNote, 1);
+		console.log(notesArr);
+		//createAllNotes();
+	};
+  newLi.appendChild(delSpan);
+	newLi.setAttribute("class","list-group-item");
+	list.appendChild(newLi);
+};
+/*------------End View----------------------------*/
+
+
 /*------------Begin Controler----------------------------*/
 
-
+function createAllNotes(){
+	list.innerHTML = "";
+	notesArr.forEach( function(item, index){
+		createEachNote(item, index);
+	});
+}
 
 
 
@@ -109,7 +126,7 @@ btnSecond.onclick = consoleInput;
 /*------------End Controler----------------------------*/
 
 
-
+btnSecond.onclick = addNewNote;
 
 </script>
 
