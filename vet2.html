@@ -3,7 +3,8 @@
 <head>
 	<title></title>
    <link rel="stylesheet" href="style.css"/>
-	
+   <link rel="stylesheet" type="text/css" href="bootstrap-theme.min.css">
+   <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 </head>
 <body>
 <div id="wrapper">
@@ -42,6 +43,14 @@
    </div>
   
   <ul class="list-group list">
+    <!--<li class="list-group-item">
+        <i class="fa fa-window-close" aria-hidden="true"></i>
+      <div class="pet1">Buffy</div>
+      <div class="owner">Peter</div>
+      <div class="date">20.12.2017</div>
+      <div class="time">12:30</div>
+      <div class="appt">has a toothache</div>
+    </li>-->
 			
   </ul>
 </div>	
@@ -97,7 +106,22 @@ function addNewNote(){
 function createEachNote(text, indexOfNote){
   
   var newLi = document.createElement("li");
-  newLi.textContent = text.pet;
+  var divPet = document.createElement("div");
+  var divOwner = document.createElement("div");
+  var divDate = document.createElement("div");
+  var divTime = document.createElement("div");
+  var divAppointment = document.createElement("div");
+  divPet.className = "pet1";
+  divOwner.className = "owner";
+  divDate.className = "date";
+  divTime.className = "time";
+  divAppointment.className = "appt";
+
+  divPet.textContent = text.pet;
+  divOwner.textContent = text.owner;
+  divDate.textContent = text.date;
+  divTime.textContent = text.time;
+  divAppointment.textContent = text.appointment;
   var delSpan = document.createElement("span");
   delSpan.setAttribute("class","glyphicon glyphicon-remove pull-left");
   delSpan.onclick = function(){
@@ -106,6 +130,11 @@ function createEachNote(text, indexOfNote){
 		console.log(notesArr);
 		createAllNotes();
 	};
+  newLi.appendChild(divPet);
+  newLi.appendChild(divOwner);
+  newLi.appendChild(divDate);
+  newLi.appendChild(divTime);
+  newLi.appendChild(divAppointment);
   newLi.appendChild(delSpan);
 	newLi.setAttribute("class","list-group-item");
 	list.appendChild(newLi);
